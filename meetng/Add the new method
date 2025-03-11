@@ -1,0 +1,43 @@
+    def send_direct_question(self):
+        """Send a direct question to LangChain about the selected transcripts"""
+        question = self.direct_chat_input.text().strip()
+        if not question:
+            return
+            
+        if not self.selected_transcripts:
+            QMessageBox.warning(self, "Warning", "No transcripts selected")
+            return
+            
+        try:
+            # Create new analysis tab for the question
+            tab_name = f"Q: {question[:30]}..." if len(question) > 30 else f"Q: {question}"
+            chat_widget = AnalysisChatWidget(self, self.langchain_service)
+            self.analysis_tabs.addTab(chat_widget, tab_name)
+            self.analysis_tabs.setCurrentWidget(chat_widget)
+            
+            # Send the question
+            chat_widget.input_field.setPlainText(question)
+            chat_widget.send_message()
+            self.direct_chat_input.clear()
+            
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to process question: {str(e)}")
+    def update_transcript_labels(self):
+        """Update transcript list items to show which tabs are using them"""
+        for i in range(self.transcript_list.count()):
+            item = self.transcript_list.item(i)
+            file_name = item.text().split(" (")[0]  # Remove existing tab info
+            
+            # Find which tabs use this transcript
+            using_tabs = []
+            for tab_idx in range(self.analysis_tabs.count()):
+                tab = self.analysis_tabs.widget(tab_idx)
+                if isinstance(tab, AnalysisChatWidget):
+                    if any(meta['name'] == file_name for meta in tab.transcripts.values()):
+                        using_tabs.append(self.analysis_tabs.tabText(tab_idx))
+                    
+            # Update item text
+            if using_tabs:
+                item.setText(f"{file_name} (Used in: {', '.join(using_tabs)})")
+            else:
+                item.setText(file_name)

@@ -1,0 +1,7 @@
+/drop
+/add       python
+/add       qt_version\ui\managers\recording_manager.py
+/add       qt_version\ui\managers\transcription_manager.py
+/add       qt_version\ui\tabs.py
+/add       qt_version\utils\audio_recorder_qt.py
+/add       services\assemblyai_realtime.py

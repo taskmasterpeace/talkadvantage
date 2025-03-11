@@ -1,0 +1,50 @@
+    def _build_initial_context(self):
+        """Build initial context from transcripts"""
+        formatted_transcripts = []
+        for file_path, meta in self.transcripts.items():
+            transcript = self.transcript_cache.get_transcript(file_path)
+            if transcript:
+                formatted_transcripts.append(
+                    f"\n=== Transcript: {meta['name']} ===\n{transcript}"
+                )
+        self.conversation_context = "\n\n".join(formatted_transcripts)
+        
+    def export_conversation(self):
+        """Export conversation history to markdown"""
+        try:
+            file_name, _ = QFileDialog.getSaveFileName(
+                self,
+                "Export Conversation",
+                "",
+                "Markdown Files (*.md)"
+            )
+            if file_name:
+                with open(file_name, 'w', encoding='utf-8') as f:
+                    # Write conversation metadata
+                    f.write(f"# {self.conversation_name or 'Untitled Conversation'}\n\n")
+                    f.write("## Analyzed Transcripts:\n")
+                    for meta in self.transcripts.values():
+                        f.write(f"- {meta['name']}\n")
+                    f.write("\n## Conversation:\n\n")
+                    
+                    # Write messages
+                    for msg in self.chat_history:
+                        role = "🤖 Assistant:" if msg["role"] == "assistant" else "👤 You:"
+                        f.write(f"### {role}\n\n{msg['content']}\n\n")
+                        
+                QMessageBox.information(self, "Success", "Conversation exported successfully!")
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to export conversation: {str(e)}")
+            
+    def clear_conversation(self):
+        """Clear current conversation history"""
+        reply = QMessageBox.question(
+            self,
+            "Clear Conversation",
+            "Are you sure you want to clear this conversation?\nThis cannot be undone.",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        if reply == QMessageBox.StandardButton.Yes:
+            self.chat_history.clear()
+            self.chat_view.clear()
+            self.chat_view.append("Conversation cleared.")

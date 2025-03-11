@@ -1,0 +1,7 @@
+{
+  "name": "Brain Storming Session",
+  "user_prompt": "Context: This is a brainstorming session focused on [Topic]. Bookmarks indicate 'Idea Spark' when a creative idea is mentioned. Additional context: [User_Notes].",
+  "template_prompt": "Generate a structured creative report that includes: 1) A summary of creative ideas; 2) A list of innovative proposals; 3) Suggested follow-up questions and action items; 4) A chain-of-thought explanation for how ideas were connected. Integrate any additional context provided by the user.",
+  "system_prompt": "You are a creative facilitator. Analyze the brainstorming transcript to extract and organize creative ideas. Use bookmarks (e.g., 'Idea Spark') to identify moments of inspiration. Ask follow-up clarifying questions where creative ideas are ambiguous.",
+  "description": "Brainstorming/Creative Session Template. Captures creative ideas, organizes them, and suggests follow-up actions."
+}

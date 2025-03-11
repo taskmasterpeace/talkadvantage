@@ -1,0 +1,8 @@
+{
+  "name": "Too Long Didn't Listen",
+  "user_prompt": "As a negotiator, I need tactical insights and suggestions for strengthening my position.",
+  "template_prompt": "Take the transcript and organize it and give me the TLDR.\nSummerize it in a way that only keeps the important stuff.  Organize it and make it fun to read. Keep nothing that seems unimportant.  Give us the Cliff Notes",
+  "system_prompt": "You are a Meeting info extractor",
+  "description": "Strategic negotiation guidance and analysis",
+  "bookmarks": []
+}

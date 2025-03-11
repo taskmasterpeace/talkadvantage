@@ -1,0 +1,28 @@
+    def send_multiple_to_deep_analysis(self):
+        """Send multiple selected transcripts to deep analysis"""
+        list_widget = self.get_active_list()
+        selected_items = list_widget.selectedItems()
+        transcript_paths = []
+        
+        for item in selected_items:
+            file_path = item.data(Qt.ItemDataRole.UserRole)
+            transcript_path = Path(file_path).with_name(f"{Path(file_path).stem}_transcript.txt")
+            if transcript_path.exists():
+                transcript_paths.append(str(transcript_path))
+        
+        if not transcript_paths:
+            QMessageBox.warning(self, "Warning", "No transcripts found for selected files")
+            return
+            
+        # Get main window
+        main_window = self.parent()
+        while main_window and not hasattr(main_window, 'deep_analysis_tab'):
+            main_window = main_window.parent()
+            
+        if not main_window:
+            QMessageBox.critical(self, "Error", "Could not find main window")
+            return
+            
+        # Send to deep analysis tab
+        main_window.deep_analysis_tab.add_transcripts(transcript_paths)
+        main_window.tab_widget.setCurrentWidget(main_window.deep_analysis_tab)

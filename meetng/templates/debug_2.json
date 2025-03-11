@@ -1,0 +1,7 @@
+{
+  "name": "Debug 2",
+  "user_prompt": "This is the User Prompt: It should tell you about the user.",
+  "template_prompt": "This is your template: It should provide",
+  "system_prompt": "This is the system prompt: It should have your instructions",
+  "description": "Template for analyzing..."
+}

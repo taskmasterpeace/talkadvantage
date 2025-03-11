@@ -1,0 +1,7 @@
+{
+  "name": "Debug",
+  "user_prompt": "Your User prompt is Robert. Im Robert",
+  "template_prompt": "This is your template. Be verbose",
+  "system_prompt": "You are an AI assistant this is your System prompt. you are an Ai that creates highly detailed notes with quotes in bold with many emojis",
+  "description": "Template for analyzing..."
+}

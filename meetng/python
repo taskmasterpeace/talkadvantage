@@ -1,0 +1,4 @@
+# Import redirection file for backward compatibility
+# Points to the new implementation in services/langchain_service.py
+
+from services.langchain_service import LangChainService

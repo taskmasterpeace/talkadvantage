@@ -1,0 +1,8 @@
+{
+  "name": "Expand & Explain",
+  "user_prompt": "Im Robert Task, Im just watching",
+  "template_prompt": "Dont add headings on numbers",
+  "system_prompt": "Define Each Term that is above a 10th grade level. Don't add additional nonsense.\n\n\nContext: Timestamp and words\nTerm - Definition",
+  "description": "Detailed analysis and explanation of content",
+  "bookmarks": []
+}

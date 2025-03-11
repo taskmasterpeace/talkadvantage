@@ -1,0 +1,16 @@
+    def _build_initial_context(self):
+        """Build initial context from transcripts"""
+        try:
+            formatted_transcripts = []
+            for file_path, meta in self.transcripts.items():
+                transcript = self.transcript_cache.get_transcript(file_path)
+                if transcript:
+                    formatted_transcripts.append(
+                        f"\n=== Transcript: {meta['name']} ===\n{transcript}"
+                    )
+            self.conversation_context = "\n\n".join(formatted_transcripts)
+            if hasattr(self, '_debug_mode') and self._debug_mode:
+                print(f"Built context from {len(formatted_transcripts)} transcripts")
+        except Exception as e:
+            print(f"Error building initial context: {e}")
+            self.conversation_context = ""

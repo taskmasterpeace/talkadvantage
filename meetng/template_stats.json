@@ -1,0 +1,74 @@
+{
+  "*Full Analysis": {
+    "uses": 22,
+    "total_response_time": 293.0339562892914,
+    "total_length": 57297,
+    "first_used": "2025-01-30T12:57:28.280300",
+    "last_used": "2025-02-02T10:41:50.064841",
+    "avg_response_time": 13.319725285876881,
+    "avg_length": 2604.409090909091
+  },
+  "Expand & Explain": {
+    "uses": 8,
+    "total_response_time": 111.40070295333862,
+    "total_length": 23482,
+    "first_used": "2025-01-30T12:59:27.902328",
+    "last_used": "2025-02-01T20:01:33.848029",
+    "avg_response_time": 13.925087869167328,
+    "avg_length": 2935.25
+  },
+  "Everything": {
+    "uses": 2,
+    "total_response_time": 18.65794062614441,
+    "total_length": 6085,
+    "first_used": "2025-01-30T13:58:01.843595",
+    "last_used": "2025-01-30T13:58:48.308292",
+    "avg_response_time": 9.328970313072205,
+    "avg_length": 3042.5
+  },
+  "Meeting Summary": {
+    "uses": 8,
+    "total_response_time": 86.42758274078369,
+    "total_length": 18047,
+    "first_used": "2025-01-30T14:10:59.044666",
+    "last_used": "2025-02-01T20:48:59.179867",
+    "avg_response_time": 10.803447842597961,
+    "avg_length": 2255.875
+  },
+  "Negotiation Assistant": {
+    "uses": 2,
+    "total_response_time": 24.726061820983887,
+    "total_length": 6801,
+    "first_used": "2025-02-02T11:13:11.557511",
+    "last_used": "2025-02-02T11:25:07.717564",
+    "avg_response_time": 12.363030910491943,
+    "avg_length": 3400.5
+  },
+  "Joker": {
+    "uses": 1,
+    "total_response_time": 6.671167850494385,
+    "total_length": 1942,
+    "first_used": "2025-02-02T23:34:34.079091",
+    "last_used": "2025-02-02T23:34:34.079091",
+    "avg_response_time": 6.671167850494385,
+    "avg_length": 1942.0
+  },
+  "Deep Analysis": {
+    "uses": 69,
+    "total_response_time": 636.1137275695801,
+    "total_length": 116395,
+    "first_used": "2025-02-04T12:19:17.438253",
+    "last_used": "2025-02-23T21:19:58.608430",
+    "avg_response_time": 9.219039529993914,
+    "avg_length": 1686.8840579710145
+  },
+  "Analysis Setup": {
+    "uses": 1,
+    "total_response_time": 0.7351670265197754,
+    "total_length": 31,
+    "first_used": "2025-02-25T10:41:00.083408",
+    "last_used": "2025-02-25T10:41:00.083408",
+    "avg_response_time": 0.7351670265197754,
+    "avg_length": 31.0
+  }
+}

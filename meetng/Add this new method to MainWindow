@@ -1,0 +1,6 @@
+    def show_settings(self):
+        """Show settings dialog"""
+        dialog = SettingsDialog(self)
+        dialog.set_keys(self.openai_key, self.assemblyai_key)
+        if dialog.exec():
+            self.openai_key, self.assemblyai_key = dialog.get_keys()
